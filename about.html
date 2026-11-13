@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About | DevTools</title>
+    <meta name="description" content="Learn more about DevTools, a collection of useful tools for developers.">
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="accessibility.skip">
+    Skip to content
+</a>
+
+<%- include('/header.ejs', { active: 'about', prefix: './' }) %>
+
+<main id="main">
+    <section class="about" aria-labelledby="about-title">
+        <h1 class="about__title" id="about-title" data-i18n="about.title">
+            About DevTools
+        </h1>
+
+        <p class="about__description" data-i18n="about.description">
+            DevTools is a collection of simple and useful online tools designed to make everyday development tasks easier.
+        </p>
+
+        <section class="about__section" aria-labelledby="mission-title">
+            <h2 class="about__subtitle" id="mission-title" data-i18n="about.missionTitle">
+                Our Mission
+            </h2>
+
+            <p class="about__text" data-i18n="about.mission">
+                Our mission is to provide developers with fast, accessible and easy-to-use utilities in one place. No installation or registration required.
+            </p>
+        </section>
+
+        <section class="about__section" aria-labelledby="features-title">
+            <h2 class="about__subtitle" id="features-title" data-i18n="about.featuresTitle">
+                What We Offer
+            </h2>
+
+            <ul class="about__list">
+                <li class="about__item" data-i18n="about.text1">JSON formatting and validation</li>
+                <li class="about__item" data-i18n="about.text2">UUID generation</li>
+                <li class="about__item" data-i18n="about.text3">Base64 encoding and decoding</li>
+                <li class="about__item" data-i18n="about.text4">Regular expression testing</li>
+                <li class="about__item" data-i18n="about.text5">Unix timestamp conversion</li>
+                <li class="about__item" data-i18n="about.text6">Cryptographic hash generation</li>
+            </ul>
+        </section>
+
+        <section class="about__section" aria-labelledby="technologies-title">
+            <h2 class="about__subtitle" id="technologies-title" data-i18n="about.technologiesTitle">
+                Technologies
+            </h2>
+
+            <p class="about__text" data-i18n="about.technologies">
+                This project is built with HTML5, CSS3, JavaScript, EJS templates and Vite.
+            </p>
+        </section>
+
+        <a class="about__link" href="./tools.html" data-i18n="about.explore">
+            Explore Tools
+        </a>
+    </section>
+</main>
+
+<%- include('/footer.ejs') %>
+</body>
+</html>

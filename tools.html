@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tools | DevTools</title>
+    <meta name="description" content="Browse developer tools for formatting, encoding and generating data.">
+</head>
+<body>
+    <a class="skip-link" href="#main" data-i18n="accessibility.skip">
+        Skip to content
+    </a>
+
+    <%- include('/header.ejs', { active: 'tools', prefix: './' }) %>
+
+    <main id="main">
+        <section class="tools" aria-labelledby="tools-title">
+            <h1 class="tools__title" id="tools-title" data-i18n="tools.title">
+                All Tools
+            </h1>
+
+            <form class="tools__search" role="search" action="./tools.html" method="get">
+                <label for="tool-search" data-i18n="tools.text1">Search tools</label>
+                <input
+                    class="tools__search-input"
+                    type="search"
+                    id="tool-search"
+                    name="search"
+                    placeholder="Search tools..."
+                    data-i18n-placeholder="tools.search"
+                >
+                <button class="tools__search-button" type="submit" data-i18n="tools.text2">
+                    Search
+                </button>
+            </form>
+
+            <aside class="tools__filters" aria-labelledby="filters-title">
+                <h2 id="filters-title" data-i18n="tools.filters">
+                    Categories
+                </h2>
+
+                <fieldset class="tools__categories">
+                    <legend data-i18n="tools.text3">Filter by category</legend>
+
+                    <label>
+                        <input type="radio" name="category" value="all" checked>
+                        All
+                    </label>
+
+                    <label>
+                        <input type="radio" name="category" value="formatters">
+                        Formatters
+                    </label>
+
+                    <label>
+                        <input type="radio" name="category" value="generators">
+                        Generators
+                    </label>
+
+                    <label>
+                        <input type="radio" name="category" value="encoders">
+                        Encoders
+                    </label>
+                </fieldset>
+            </aside>
+
+            <section class="tools__catalog" aria-labelledby="catalog-title">
+                <h2 id="catalog-title" data-i18n="tools.catalog">
+                    Available Tools
+                </h2>
+
+                <ul class="tools__list">
+                    <li class="tools__item">
+                        <%- include('/tool-card.ejs', {
+                        title: 'JSON Formatter',
+                        description: 'Format and validate JSON data.',
+                        link: './tool-details/json-formatter.html'
+                        }) %>
+                    </li>
+
+                    <li class="tools__item">
+                        <%- include('/tool-card.ejs', {
+                        title: 'UUID Generator',
+                        description: 'Generate unique identifiers.',
+                        link: './tool-details/uuid-generator.html'
+                        }) %>
+                    </li>
+
+                    <li class="tools__item">
+                        <%- include('/tool-card.ejs', {
+                        title: 'Base64 Encoder',
+                        description: 'Encode and decode Base64 strings.',
+                        link: './tool-details/base64-encoder.html'
+                        }) %>
+                    </li>
+
+                    <li class="tools__item">
+                        <%- include('/tool-card.ejs', {
+                        title: 'Regex Tester',
+                        description: 'Test regular expressions.',
+                        link: './tool-details/regex-tester.html'
+                        }) %>
+                    </li>
+
+                    <li class="tools__item">
+                        <%- include('/tool-card.ejs', {
+                        title: 'Timestamp Converter',
+                        description: 'Convert Unix timestamps.',
+                        link: './tool-details/timestamp-converter.html'
+                        }) %>
+                    </li>
+
+                    <li class="tools__item">
+                        <%- include('/tool-card.ejs', {
+                        title: 'Hash Generator',
+                        description: 'Create a text hash.',
+                        link: './tool-details/hash-generator.html'
+                        }) %>
+                    </li>
+                </ul>
+            </section>
+        </section>
+    </main>
+
+    <%- include('/footer.ejs') %>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Base64 Encoder | DevTools</title>
+    <meta name="description" content="Encode and decode text using Base64.">
+</head>
+<body>
+    <a class="skip-link" href="#main" data-i18n="accessibility.skip">
+        Skip to content
+    </a>
+
+    <%- include('/header.ejs', { active: 'tools', prefix: '../' }) %>
+
+    <main id="main">
+        <section class="tool-details" aria-labelledby="tool-title">
+            <h1 class="tool-details__title" id="tool-title" data-i18n="base64.title">
+                Base64 Encoder
+            </h1>
+
+            <p class="tool-details__description" data-i18n="base64.description">
+                Encode or decode text using Base64.
+            </p>
+
+            <div class="base64">
+                <div class="base64__field">
+                    <label class="base64__label" for="base64-input" data-i18n="base64.encoder.text1">
+                        Input
+                    </label>
+
+                    <textarea
+                            class="base64__textarea"
+                            id="base64-input"
+                            placeholder="Enter text or Base64..."
+                            rows="8"
+                            spellcheck="false"
+                            data-i18n-placeholder="base64.inputPlaceholder"
+                    ></textarea>
+                </div>
+
+                <div class="base64__actions">
+                    <button class="base64__button base64__button--primary"
+                            type="button"
+                            id="base64-encode"
+                            data-i18n="base64.encode">
+                        Encode
+                    </button>
+
+                    <button class="base64__button base64__button--secondary"
+                            type="button"
+                            id="base64-decode"
+                            data-i18n="base64.decode">
+                        Decode
+                    </button>
+
+                    <button class="base64__button base64__button--secondary"
+                            type="button"
+                            id="base64-clear"
+                            data-i18n="base64.clear">
+                        Clear
+                    </button>
+                </div>
+
+                <div class="base64__field">
+                    <label class="base64__label" for="base64-result" data-i18n="base64.encoder.text2">
+                        Result
+                    </label>
+
+                    <textarea
+                            class="base64__textarea"
+                            id="base64-result"
+                            placeholder="Result will appear here..."
+                            rows="8"
+                            readonly
+                            spellcheck="false"
+                            data-i18n-placeholder="base64.resultPlaceholder"
+                    ></textarea>
+                </div>
+
+                <p class="base64__status" id="base64-status" role="status"></p>
+            </div>
+        </section>
+    </main>
+
+    <%- include('/footer.ejs') %>
+</body>
+</html>

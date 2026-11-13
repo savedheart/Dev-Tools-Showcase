@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UUID Generator | DevTools</title>
+    <meta name="description" content="Generate random UUID v4 identifiers.">
+</head>
+<body>
+    <a class="skip-link" href="#main" data-i18n="accessibility.skip">
+        Skip to content
+    </a>
+
+    <%- include('/header.ejs', { active: 'tools', prefix: '../' }) %>
+
+    <main id="main">
+        <section class="tool-details" aria-labelledby="tool-title">
+            <h1 class="tool-details__title" id="tool-title" data-i18n="uuid.title">
+                UUID Generator
+            </h1>
+
+            <p class="tool-details__description" data-i18n="uuid.description">
+                Generate a random UUID v4 identifier.
+            </p>
+
+            <div class="uuid-generator">
+                <div class="uuid-generator__field">
+                    <label class="uuid-generator__label" for="uuid-result" data-i18n="uuid.generator.text1">
+                        Generated UUID
+                    </label>
+
+                    <input
+                            class="uuid-generator__input"
+                            type="text"
+                            id="uuid-result"
+                            placeholder="Your UUID will appear here..."
+                            readonly
+                            data-i18n-placeholder="uuid.placeholder"
+                    >
+                </div>
+
+                <div class="uuid-generator__actions">
+                    <button
+                            class="uuid-generator__button uuid-generator__button--primary"
+                            type="button"
+                            id="generate-uuid"
+                            data-i18n="uuid.generate">
+                        Generate
+                    </button>
+
+                    <button
+                            class="uuid-generator__button uuid-generator__button--secondary"
+                            type="button"
+                            id="copy-uuid"
+                            data-i18n="uuid.copy">
+                        Copy
+                    </button>
+                </div>
+
+                <p class="uuid-generator__status"
+                   id="uuid-status"
+                   role="status"
+                   aria-live="polite"></p>
+            </div>
+        </section>
+    </main>
+
+    <%- include('/footer') %>
+</body>
+</html>

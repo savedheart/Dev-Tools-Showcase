@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hash Generator | DevTools</title>
+    <meta name="description" content="Generate SHA-256 hashes from text.">
+</head>
+<body>
+    <a class="skip-link" href="#main" data-i18n="accessibility.skip">
+        Skip to content
+    </a>
+
+    <%- include('/header.ejs', { active: 'tools', prefix: '../' }) %>
+
+    <main id="main">
+        <section class="tool-details" aria-labelledby="tool-title">
+            <h1 class="tool-details__title" id="tool-title" data-i18n="hash.title">
+                Hash Generator
+            </h1>
+
+            <p class="tool-details__description" data-i18n="hash.description">
+                Generate a SHA-256 hash from your text.
+            </p>
+
+            <form class="hash-generator" id="hash-form">
+                <div class="hash-generator__field">
+                    <label class="hash-generator__label" for="hash-input" data-i18n="hash.generator.text1">
+                        Input Text
+                    </label>
+
+                    <textarea
+                            class="hash-generator__textarea"
+                            id="hash-input"
+                            name="text"
+                            placeholder="Enter text to hash..."
+                            rows="8"
+                            spellcheck="false"
+                            required
+                    ></textarea>
+                </div>
+
+                <div class="hash-generator__field">
+                    <label class="hash-generator__label" for="hash-algorithm" data-i18n="hash.generator.text2">
+                        Hash Algorithm
+                    </label>
+
+                    <select
+                            class="hash-generator__select"
+                            id="hash-algorithm"
+                            name="algorithm"
+                    >
+                        <option value="SHA-256" selected data-i18n="hash.generator.text3">SHA-256</option>
+                        <option value="SHA-384" data-i18n="hash.generator.text4">SHA-384</option>
+                        <option value="SHA-512" data-i18n="hash.generator.text5">SHA-512</option>
+                    </select>
+                </div>
+
+                <div class="hash-generator__actions">
+                    <button
+                            class="hash-generator__button hash-generator__button--primary"
+                            type="button"
+                            id="hash-generate" data-i18n="hash.generator.text6">
+                        Generate Hash
+                    </button>
+
+                    <button
+                            class="hash-generator__button hash-generator__button--secondary"
+                            type="button"
+                            id="hash-copy" data-i18n="hash.generator.text7">
+                        Copy
+                    </button>
+
+                    <button
+                            class="hash-generator__button hash-generator__button--secondary"
+                            type="reset"
+                            id="hash-clear" data-i18n="hash.generator.text8">
+                        Clear
+                    </button>
+                </div>
+
+                <div class="hash-generator__field">
+                    <label class="hash-generator__label" for="hash-result" data-i18n="hash.generator.text9">
+                        Generated Hash
+                    </label>
+
+                    <textarea
+                            class="hash-generator__textarea"
+                            id="hash-result"
+                            placeholder="Your hash will appear here..."
+                            rows="4"
+                            readonly
+                            spellcheck="false"
+                    ></textarea>
+                </div>
+
+                <p class="hash-generator__status"
+                   id="hash-status"
+                   role="status"></p>
+            </form>
+        </section>
+    </main>
+
+    <%- include('/footer.ejs') %>
+</body>
+</html>

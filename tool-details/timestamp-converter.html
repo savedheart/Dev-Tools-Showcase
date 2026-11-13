@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Timestamp Converter | DevTools</title>
+    <meta name="description" content="Convert Unix timestamps to dates and dates to Unix timestamps.">
+</head>
+<body>
+    <a class="skip-link" href="#main" data-i18n="accessibility.skip">
+        Skip to content
+    </a>
+
+    <%- include('/header.ejs', { active: 'tools', prefix: '../' }) %>
+
+    <main id="main">
+        <section class="tool-details" aria-labelledby="tool-title">
+            <h1 class="tool-details__title" id="tool-title" data-i18n="timestamp.title">
+                Timestamp Converter
+            </h1>
+
+            <p class="tool-details__description" data-i18n="timestamp.description">
+                Convert Unix timestamps to dates and back.
+            </p>
+
+            <form class="timestamp-converter" id="timestamp-form">
+                <fieldset class="timestamp-converter__modes">
+                    <legend class="timestamp-converter__legend" data-i18n="timestamp.converter.text1">
+                        Conversion Mode
+                    </legend>
+
+                    <label class="timestamp-converter__mode">
+                        <input
+                                type="radio"
+                                name="conversion-mode"
+                                value="timestamp-to-date"
+                                checked
+                        >
+                        Timestamp to Date
+                    </label>
+
+                    <label class="timestamp-converter__mode">
+                        <input
+                                type="radio"
+                                name="conversion-mode"
+                                value="date-to-timestamp"
+                        >
+                        Date to Timestamp
+                    </label>
+                </fieldset>
+
+                <div class="timestamp-converter__field">
+                    <label class="timestamp-converter__label" for="timestamp-input" data-i18n="timestamp.converter.text2">
+                        Unix Timestamp
+                    </label>
+
+                    <input
+                            class="timestamp-converter__input"
+                            type="number"
+                            id="timestamp-input"
+                            name="timestamp"
+                            placeholder="Enter Unix timestamp..."
+                            step="1"
+                    >
+                </div>
+
+                <div class="timestamp-converter__field">
+                    <label class="timestamp-converter__label" for="date-input" data-i18n="timestamp.converter.text3">
+                        Date and Time
+                    </label>
+
+                    <input
+                            class="timestamp-converter__input"
+                            type="datetime-local"
+                            id="date-input"
+                            name="date"
+                    >
+                </div>
+
+                <div class="timestamp-converter__actions">
+                    <button
+                            class="timestamp-converter__button timestamp-converter__button--primary"
+                            type="button"
+                            id="timestamp-convert" data-i18n="timestamp.converter.text4">
+                        Convert
+                    </button>
+                    <button
+
+                            class="timestamp-converter__button timestamp-converter__button--secondary"
+                            type="reset"
+                            id="timestamp-clear" data-i18n="timestamp.converter.text5">
+                        Clear
+                    </button>
+                </div>
+
+                <div class="timestamp-converter__field">
+                    <label class="timestamp-converter__label" for="timestamp-result" data-i18n="timestamp.converter.text6">
+                        Result
+                    </label>
+
+                    <output
+                            class="timestamp-converter__result"
+                            id="timestamp-result"
+                            for="timestamp-input date-input">
+                    </output>
+                </div>
+
+                <p class="timestamp-converter__status"
+                   id="timestamp-status"
+                   role="status"></p>
+            </form>
+        </section>
+    </main>
+
+    <%- include('/footer.ejs') %>
+</body>
+</html>

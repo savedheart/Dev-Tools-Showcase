@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Regex Tester | DevTools</title>
+    <meta name="description" content="Test regular expressions and find matches in text.">
+</head>
+<body>
+    <a class="skip-link" href="#main" data-i18n="accessibility.skip">
+        Skip to content
+    </a>
+
+    <%- include('/header.ejs', { active: 'tools', prefix: '../' }) %>
+
+    <main id="main">
+        <section class="tool-details" aria-labelledby="tool-title">
+            <h1 class="tool-details__title" id="tool-title" data-i18n="regex.title">
+                Regex Tester
+            </h1>
+
+            <p class="tool-details__description" data-i18n="regex.description">
+                Test regular expressions against your text.
+            </p>
+
+            <form class="regex-tester" id="regex-form">
+                <div class="regex-tester__field">
+                    <label class="regex-tester__label" for="regex-pattern" data-i18n="regex.tester.text1">
+                        Regular Expression
+                    </label>
+
+                    <input
+                            class="regex-tester__input"
+                            type="text"
+                            id="regex-pattern"
+                            name="pattern"
+                            placeholder="Enter regex pattern..."
+                            spellcheck="false"
+                            required
+                    >
+                </div>
+
+                <fieldset class="regex-tester__flags">
+                    <legend class="regex-tester__legend" data-i18n="regex.tester.text2">Flags</legend>
+
+                    <label class="regex-tester__flag">
+                        <input type="checkbox" name="flags" value="g" checked>
+                        Global (g)
+                    </label>
+
+                    <label class="regex-tester__flag">
+                        <input type="checkbox" name="flags" value="i">
+                        Ignore Case (i)
+                    </label>
+
+                    <label class="regex-tester__flag">
+                        <input type="checkbox" name="flags" value="m">
+                        Multiline (m)
+                    </label>
+                </fieldset>
+
+                <div class="regex-tester__field">
+                    <label class="regex-tester__label" for="regex-input" data-i18n="regex.tester.text3">
+                        Test Text
+                    </label>
+
+                    <textarea
+                            class="regex-tester__textarea"
+                            id="regex-input"
+                            name="text"
+                            placeholder="Enter text to test..."
+                            rows="8"
+                            spellcheck="false"
+                    ></textarea>
+                </div>
+
+                <div class="regex-tester__actions">
+                    <button class="regex-tester__button regex-tester__button--primary"
+                            type="button"
+                            id="regex-test" data-i18n="regex.tester.text4">
+                        Test
+                    </button>
+
+                    <button class="regex-tester__button regex-tester__button--secondary"
+                            type="reset"
+                            id="regex-clear" data-i18n="regex.tester.text5">
+                        Clear
+                    </button>
+                </div>
+
+                <section class="regex-tester__results" aria-labelledby="regex-results-title">
+                    <h2 class="regex-tester__results-title" id="regex-results-title" data-i18n="regex.tester.text6">
+                        Matches
+                    </h2>
+
+                    <p class="regex-tester__summary" id="regex-summary" role="status" data-i18n="regex.tester.text7">
+                        No matches yet.
+                    </p>
+
+                    <ul class="regex-tester__matches" id="regex-matches"></ul>
+                </section>
+            </form>
+        </section>
+    </main>
+
+    <%- include('/footer.ejs') %>
+</body>
+</html>

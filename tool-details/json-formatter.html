@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JSON Formatter | DevTools</title>
+    <meta name="description" content="Format and validate JSON data.">
+</head>
+<body>
+    <a class="skip-link" href="#main" data-i18n="accessibility.skip">
+        Skip to content
+    </a>
+
+    <%- include('/header.ejs', { active: 'tools', prefix: '../' }) %>
+
+    <main id="main">
+        <section class="tool-details" aria-labelledby="tool-title">
+            <h1 class="tool-details__title" id="tool-title" data-i18n="json.title">
+                JSON Formatter
+            </h1>
+
+            <p class="tool-details__description" data-i18n="json.description">
+                Paste your JSON and format it.
+            </p>
+
+            <form class="formatter" action="./json-formatter.html" method="get">
+                <div class="formatter__field">
+                    <label class="formatter__label" for="json-input" data-i18n="json.formatter.text1">
+                        Input
+                    </label>
+
+                    <textarea
+                            class="formatter__textarea"
+                            id="json-input"
+                            name="json"
+                            placeholder="Enter JSON..."
+                            rows="8"
+                            spellcheck="false"
+                            data-i18n-placeholder="json.inputPlaceholder"
+                    ></textarea>
+                </div>
+
+                <div class="formatter__actions">
+                    <button class="formatter__button formatter__button--primary"
+                            type="button"
+                            data-i18n="json.format">
+                        Format
+                    </button>
+
+                    <button class="formatter__button formatter__button--secondary"
+                            type="reset"
+                            data-i18n="json.clear">
+                        Clear
+                    </button>
+                </div>
+
+                <div class="formatter__field">
+                    <label class="formatter__label" for="json-result" data-i18n="json.formatter.text2">
+                        Result
+                    </label>
+
+                    <textarea
+                            class="formatter__textarea"
+                            id="json-result"
+                            placeholder="Formatted result..."
+                            rows="8"
+                            readonly
+                            spellcheck="false"
+                            data-i18n-placeholder="json.resultPlaceholder"
+                    ></textarea>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <%- include('/footer') %>
+</body>
+</html>

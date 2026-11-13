@@ -1,0 +1,41 @@
+<header class="header">
+    <a class="header__logo" href="<%= prefix %>index.html" data-i18n="site.logo">
+        DevTools
+    </a>
+
+    <nav class="nav" aria-label="Main navigation">
+        <ul class="nav__list">
+            <li class="nav__item">
+                <a class="nav__link" href="<%= prefix %>index.html"
+                   <% if (active === 'home') { %>aria-current="page"<% } %>
+                   data-i18n="nav.home">
+                    Home
+                </a>
+            </li>
+
+            <li class="nav__item">
+                <a class="nav__link" href="<%= prefix %>tools.html"
+                   <% if (active === 'tools') { %>aria-current="page"<% } %>
+                   data-i18n="nav.tools">
+                    Tools
+                </a>
+            </li>
+
+            <li class="nav__item">
+                <a class="nav__link" href="<%= prefix %>about.html"
+                   <% if (active === 'about') { %>aria-current="page"<% } %>
+                   data-i18n="nav.about">
+                    About
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <button class="header__burger"
+    type="button"
+    aria-label="Open navigation menu"
+    aria-controls="mobile-navigation"
+    aria-expanded="false">
+        <span aria-hidden="true">&#9776;</span>
+    </button>
+</header>
