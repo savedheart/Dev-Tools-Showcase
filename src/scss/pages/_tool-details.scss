@@ -1,0 +1,60 @@
+@use '../abstracts' as *;
+
+.tool-details {
+  padding-block: rem(48px);
+
+  &__title {
+    margin-bottom: space(4);
+  }
+
+  &__description {
+    margin-bottom: space(10);
+  }
+
+  @include media-up(md) {
+    padding-top: rem(80px);
+  }
+}
+
+.formatter,
+.uuid-generator,
+.base64,
+.regex-tester,
+.timestamp-converter,
+.hash-generator {
+  @include grid(1, space(6));
+
+  padding: space(4);
+
+  background-color: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+
+  &__field {
+    @include flex(column, flex-start, stretch, space(3));
+  }
+
+  &__label {
+    @include text-style($font-size-h3, 1.2, $font-weight-semibold);
+  }
+
+  &__actions {
+    @include flex(column, flex-start, stretch, space(3));
+
+    @include media-up(md) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__status {
+    @include text-style($font-size-caption);
+
+    color: $color-text-muted;
+    overflow-wrap: anywhere;
+  }
+
+  @include media-up(md) {
+    padding: space(6);
+  }
+}
