@@ -1,0 +1,84 @@
+@use 'sass:map';
+@use 'sass:math';
+@use 'variables' as v;
+@use 'functions' as f;
+
+/* Адаптивність */
+
+@mixin media-up($breakpoint) {
+  $width: map.get(v.$breakpoints, $breakpoint);
+
+  @if $width == null {
+    @error "Unknown breakpoint: #{$breakpoint}";
+  }
+
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+/* Контейнер */
+
+@mixin container($max-width: v.#container-max) {
+  width: 100%;
+  max-width: f.rem($max-width);
+  margin-inline: auto;
+  padding-inline: f.rem(v.$gutter-sm);
+
+  @include media-up(md) {
+    padding-inline: f.rem(v.$gutter-md);
+  }
+}
+
+/* Flexbox */
+
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+/* CSS Grid */
+
+@mixin grid($columns: 1, $gap: f.space(4)) {
+  display: grid;
+  grid-template-columns: repeat($columns, minmax(0, 1fr));
+  gap: $gap;
+}
+
+/* Типографіка */
+
+@mixin text-style($size, $line-height: 1.5, $weight: v.$font-weight-regular) {
+  font-size: f.rem($size);
+  line-height: $line-height;
+  font-weight: $weight;
+}
+
+/* Плавні переходи */
+
+@mixin transition($properties...) {
+  transition-property: $properties;
+  transition-duration: v.$duration-base;
+  transition-timing-function: v.$easing;
+}
+
+/* Рядок кастомного гріда */
+
+@mixin row($gutter: v.$gutter-md) {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: $gutter;
+  margin-inline: math.div(-$gutter, 2);
+}
+
+/* Колонка кастомного гріда */
+
+@mixin col($span, $total: 12, $gutter: v.$gutter-md) {
+  $width: math.percentage(math.div($span, $total));
+
+  flex: 0 0 $width;
+  max-width: $width;
+  padding-inline: math.div($gutter, 2);
+}
