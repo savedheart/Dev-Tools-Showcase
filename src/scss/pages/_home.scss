@@ -1,0 +1,32 @@
+@use '../abstracts' as *;
+
+.hero {
+  padding-block: rem(48px);
+
+  &__title {
+    margin-bottom: space(4);
+  }
+
+  &__description {
+    margin-bottom: space(6);
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    border-radius: $radius-md;
+    margin-top: space(6);
+  }
+
+  @include media-up(md) {
+    padding-block: rem(80px);
+  }
+}
+
+.popular-tools {
+  padding-bottom: rem(64px);
+
+  &__title {
+    margin-bottom: space(6);
+  }
+}
