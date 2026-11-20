@@ -1,0 +1,30 @@
+@use '../abstracts' as *;
+
+body {
+  font-family: $font-family;
+  @include text-style($font-size-body, 1.5);
+}
+
+h1 {
+  @include text-style(30px, 1.2, $font-weight-bold);
+
+  @include media-up(md) {
+    @include text-style($font-size-h1, 1.2, $font-weight-bold);
+  }
+}
+
+h2 {
+  @include text-style(24px, 1.2, $font-weight-bold);
+
+  @include media-up(md) {
+    @include text-style($font-size-h2, 1.2, $font-weight-bold);
+  }
+}
+
+h3 {
+  @include text-style($font-size-h3, 1.18, $font-weight-semibold);
+}
+
+p {
+  color: $color-text-muted;
+}
