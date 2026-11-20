@@ -1,0 +1,29 @@
+@use '../abstracts' as *;
+
+.header {
+  border-bottom: 1px solid $color-border;
+
+  &__container {
+    @include container;
+    @include flex(row, space-between, center, space(4));
+
+    min-height: rem(64px);
+    flex-wrap: wrap;
+  }
+
+  &__logo {
+    @include text-style($font-size-h3, 1.2, $font-weight-semibold);
+  }
+
+  &__burger {
+    background: transparent;
+    border: 0;
+    color: $color-text;
+    font-size: rem(24px);
+    padding: space(2);
+
+    @include media-up(md) {
+      display: none;
+    }
+  }
+}
