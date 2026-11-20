@@ -1,0 +1,61 @@
+/* Colors */
+
+$color-background: #0d1117;
+$color-surface: #161b22;
+$color-text: #f0f6fc;
+$color-text-muted: #8b949e;
+$color-accent: #7c5cfc;
+$color-accent-hover: #6d4cf0;
+$color-border: #30363d;
+
+/* Typography */
+
+$font-family: 'Inter', system-ui, sans-serif;
+
+$font-size-h1: 40px;
+$font-size-h2: 30px;
+$font-size-h3: 22px;
+$font-size-body: 16px;
+$font-size-caption: 13px;
+
+$font-weight-regular: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+/* Spacing */
+
+$space: (
+        0: 0,
+        1: 4px,
+        2: 8px,
+        3: 12px,
+        4: 16px,
+        6: 24px,
+        10: 40px
+);
+
+/* Breakpoints */
+
+$breakpoints: (
+        sm: 360px,
+        md: 768px,
+        lg: 1280px
+);
+
+/* Layout */
+
+$container-max: 1200px;
+$gutter-sm: 16px;
+$gutter-md: 24px;
+
+/* Border radius */
+
+$radius-sm: 6px;
+$radius-md: 8px;
+
+/* Animation */
+
+$duration-fast: 120ms;
+$duration-base: 200ms;
+$duration-slow: 320ms;
+$easing: ease-in-out;

@@ -1,0 +1,20 @@
+@use 'sass:math';
+@use 'sass:color';
+@use 'sass:map';
+@use 'variables' as v;
+
+@function rem($px) {
+  @return math.div($px, 16px) * 1rem;
+}
+
+@function tint($value, $amount) {
+  @return color.mix(white, $value, $amount);
+}
+
+@function shade($value, $amount) {
+  @return color.mix(black, $value, $amount);
+}
+
+@function space($key) {
+  @return rem(map.get(v.$space, $key) + 0px);
+}
