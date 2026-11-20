@@ -1,0 +1,30 @@
+@use '../abstracts' as *;
+
+main {
+  @include container;
+
+  flex: 1;
+  min-width: 0;
+}
+
+.popular-tools__list,
+.tools__list {
+  @include row($gutter-sm);
+
+  @include media-up(md) {
+    @include row($gutter-md);
+  }
+}
+
+.popular-tools__item,
+.tools__item {
+  @include col(12, 12, $gutter-sm);
+
+  @include media-up(md) {
+    @include col(6);
+  }
+
+  @include media-up(lg) {
+    @include col(4);
+  }
+}
