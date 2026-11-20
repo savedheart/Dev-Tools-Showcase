@@ -21,10 +21,14 @@
                 All Tools
             </h1>
 
+            <p class="tools__description">
+                Choose a tool from the list below.
+            </p>
+
             <form class="tools__search" role="search" action="./tools.html" method="get">
-                <label for="tool-search" data-i18n="tools.text1">Search tools</label>
+                <label class="visually-hidden" for="tool-search" data-i18n="tools.text1">Search tools</label>
                 <input
-                    class="tools__search-input"
+                    class="tools__search-input input"
                     type="search"
                     id="tool-search"
                     name="search"
@@ -37,12 +41,12 @@
             </form>
 
             <aside class="tools__filters" aria-labelledby="filters-title">
-                <h2 id="filters-title" data-i18n="tools.filters">
+                <h2 id="filters-title" class="visually-hidden" data-i18n="tools.filters">
                     Categories
                 </h2>
 
                 <fieldset class="tools__categories">
-                    <legend data-i18n="tools.text3">Filter by category</legend>
+                    <legend class="visually-hidden" data-i18n="tools.text3">Filter by category</legend>
 
                     <label>
                         <input type="radio" name="category" value="all" checked>
@@ -67,7 +71,7 @@
             </aside>
 
             <section class="tools__catalog" aria-labelledby="catalog-title">
-                <h2 id="catalog-title" data-i18n="tools.catalog">
+                <h2 class="visually-hidden" id="catalog-title" data-i18n="tools.catalog">
                     Available Tools
                 </h2>
 

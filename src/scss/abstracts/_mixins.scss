@@ -19,7 +19,7 @@
 
 /* Контейнер */
 
-@mixin container($max-width: v.#container-max) {
+@mixin container($max-width: v.$container-max) {
   width: 100%;
   max-width: f.rem($max-width);
   margin-inline: auto;

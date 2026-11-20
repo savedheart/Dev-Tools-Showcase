@@ -12,11 +12,6 @@
 
   @include transition(border-color, transform);
 
-  &:hover {
-    border-color: $color-accent;
-    transform: translateY(-4px);
-  }
-
   &__title {
     color: $color-text;
   }
