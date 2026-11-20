@@ -1,0 +1,58 @@
+@use '../abstracts' as *;
+
+.tools {
+  padding-block: rem(48px);
+
+  &__title {
+    margin-bottom: space(4);
+  }
+
+  &__description {
+    margin-bottom: space(10);
+  }
+
+  &__search {
+    @include flex(row, flex-start, center, space(3));
+
+    flex-wrap: wrap;
+    margin-bottom: space(4);
+  }
+
+  &__search-input {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__filters {
+    margin-bottom: space(6);
+
+    fieldset {
+      @include flex(row, flex-start, center, space(2));
+
+      flex-wrap: wrap;
+    }
+
+    label {
+      cursor: pointer;
+
+      padding: space(2) space(3);
+      background-color: $color-surface;
+      border: 1px solid $color-border;
+      border-radius: $radius-sm;
+
+      @include transition(border-color);
+
+      &:hover {
+        border-color: $color-accent;
+      }
+    }
+
+    input {
+      accent-color: $color-accent;
+    }
+  }
+
+  @include media-up(md) {
+    padding-top: rem(80px);
+  }
+}
