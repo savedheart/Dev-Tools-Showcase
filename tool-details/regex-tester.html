@@ -32,7 +32,7 @@
                     </label>
 
                     <input
-                            class="regex-tester__input"
+                            class="regex-tester__input input"
                             type="text"
                             id="regex-pattern"
                             name="pattern"
@@ -43,19 +43,19 @@
                 </div>
 
                 <fieldset class="regex-tester__flags">
-                    <legend class="regex-tester__legend" data-i18n="regex.tester.text2">Flags</legend>
+                    <legend class="regex-tester__label" data-i18n="regex.tester.text2">Flags</legend>
 
-                    <label class="regex-tester__flag">
+                    <label class="regex-tester__option">
                         <input type="checkbox" name="flags" value="g" checked>
                         Global (g)
                     </label>
 
-                    <label class="regex-tester__flag">
+                    <label class="regex-tester__option">
                         <input type="checkbox" name="flags" value="i">
                         Ignore Case (i)
                     </label>
 
-                    <label class="regex-tester__flag">
+                    <label class="regex-tester__option">
                         <input type="checkbox" name="flags" value="m">
                         Multiline (m)
                     </label>
@@ -67,7 +67,7 @@
                     </label>
 
                     <textarea
-                            class="regex-tester__textarea"
+                            class="regex-tester__textarea input"
                             id="regex-input"
                             name="text"
                             placeholder="Enter text to test..."
@@ -91,11 +91,11 @@
                 </div>
 
                 <section class="regex-tester__results" aria-labelledby="regex-results-title">
-                    <h2 class="regex-tester__results-title" id="regex-results-title" data-i18n="regex.tester.text6">
+                    <h2 class="regex-tester__label" id="regex-results-title" data-i18n="regex.tester.text6">
                         Matches
                     </h2>
 
-                    <p class="regex-tester__summary" id="regex-summary" role="status" data-i18n="regex.tester.text7">
+                    <p class="regex-tester__result" id="regex-summary" role="status" data-i18n="regex.tester.text7">
                         No matches yet.
                     </p>
 
