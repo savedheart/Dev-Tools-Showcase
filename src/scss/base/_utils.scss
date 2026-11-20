@@ -1,0 +1,59 @@
+@use '../abstracts' as *;
+
+/* Генерація класів відступів */
+
+@each $key, $value in $space {
+  .mt-#{$key} {
+    margin-top: $value;
+  }
+
+  .mb-#{$key} {
+    margin-bottom: $value;
+  }
+
+  .p-#{$key} {
+    padding: $value;
+  }
+}
+
+/* Приховування елемента */
+
+.is-hidden {
+  display: none !important;
+}
+
+/* Візуальне приховування елемента */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Посилання для клавіатурної навігації */
+
+.skip-link {
+  position: fixed;
+  top: space(2);
+  left: space(2);
+  z-index: 1000;
+  padding: space(3) space(4);
+  background: $color-accent-hover;
+  color: $color-text;
+  border-radius: $radius-sm;
+  transform: translateY(-200%);
+
+  &:focus {
+    transform: translateY(0);
+  }
+}
+
+/* Видимий фокус */
+
+:focus-visible {
+  outline: 2px solid $color-accent;
+  outline-offset: 3px;
+}

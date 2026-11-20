@@ -1,0 +1,46 @@
+@use '../abstracts' as *;
+
+.about {
+  padding-block: rem(48px);
+
+  &__title {
+    margin-bottom: space(6);
+  }
+
+  &__section {
+    margin-bottom: space(10);
+  }
+
+  &__subtitle {
+    margin-bottom: space(4);
+  }
+
+  &__text {
+    margin-bottom: space(4);
+  }
+
+  &__list {
+    list-style: disc;
+    padding-left: space(6);
+  }
+
+  &__item {
+    margin-bottom: space(2);
+    color: $color-text-muted;
+  }
+
+  &__link {
+    color: $color-accent;
+    text-decoration: underline;
+
+    @include transition(color);
+
+    &:hover {
+      color: tint($color-accent, 20%);
+    }
+  }
+
+  @include media-up(md) {
+    padding-top: rem(80px);
+  }
+}

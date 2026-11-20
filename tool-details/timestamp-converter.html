@@ -6,6 +6,7 @@
 
     <title>Timestamp Converter | DevTools</title>
     <meta name="description" content="Convert Unix timestamps to dates and dates to Unix timestamps.">
+    <link rel="stylesheet" href="/src/scss/main.scss">
 </head>
 <body>
     <a class="skip-link" href="#main" data-i18n="accessibility.skip">
@@ -25,27 +26,18 @@
             </p>
 
             <form class="timestamp-converter" id="timestamp-form">
-                <fieldset class="timestamp-converter__modes">
-                    <legend class="timestamp-converter__legend" data-i18n="timestamp.converter.text1">
+                <fieldset class="timestamp-converter__mode">
+                    <legend class="timestamp-converter__label">
                         Conversion Mode
                     </legend>
 
-                    <label class="timestamp-converter__mode">
-                        <input
-                                type="radio"
-                                name="conversion-mode"
-                                value="timestamp-to-date"
-                                checked
-                        >
+                    <label class="timestamp-converter__option">
+                        <input type="radio" name="mode" value="timestamp-to-date" checked>
                         Timestamp to Date
                     </label>
 
-                    <label class="timestamp-converter__mode">
-                        <input
-                                type="radio"
-                                name="conversion-mode"
-                                value="date-to-timestamp"
-                        >
+                    <label class="timestamp-converter__option">
+                        <input type="radio" name="mode" value="date-to-timestamp">
                         Date to Timestamp
                     </label>
                 </fieldset>
@@ -56,7 +48,7 @@
                     </label>
 
                     <input
-                            class="timestamp-converter__input"
+                            class="timestamp-converter__input input"
                             type="number"
                             id="timestamp-input"
                             name="timestamp"
@@ -71,7 +63,7 @@
                     </label>
 
                     <input
-                            class="timestamp-converter__input"
+                            class="timestamp-converter__input input"
                             type="datetime-local"
                             id="date-input"
                             name="date"
@@ -80,14 +72,13 @@
 
                 <div class="timestamp-converter__actions">
                     <button
-                            class="timestamp-converter__button timestamp-converter__button--primary"
+                            class="timestamp-converter__button button button--primary"
                             type="button"
                             id="timestamp-convert" data-i18n="timestamp.converter.text4">
                         Convert
                     </button>
                     <button
-
-                            class="timestamp-converter__button timestamp-converter__button--secondary"
+                            class="timestamp-converter__button button button--secondary"
                             type="reset"
                             id="timestamp-clear" data-i18n="timestamp.converter.text5">
                         Clear

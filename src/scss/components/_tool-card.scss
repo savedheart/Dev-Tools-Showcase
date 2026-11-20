@@ -1,0 +1,26 @@
+@use '../abstracts' as *;
+
+.tool-card {
+  @include flex(column, flex-start, flex-start, space(4));
+
+  height: 100%;
+  padding: space(6);
+
+  background-color: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+
+  @include transition(border-color, transform);
+
+  &__title {
+    color: $color-text;
+  }
+
+  &__description {
+    color: $color-text-muted;
+  }
+
+  &__link {
+    margin-top: auto;
+  }
+}
