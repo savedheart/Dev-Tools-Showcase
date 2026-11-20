@@ -1,0 +1,30 @@
+@media print {
+  .header,
+  .footer,
+  .skip-link,
+  .tools__search,
+  .tools__filters,
+  button {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+    font-size: 11pt;
+  }
+
+  h1, h2, h3, p {
+    color: black;
+  }
+
+  .tool-card {
+    background: white;
+    color: black;
+    break-inside: avoid;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+  }
+}
